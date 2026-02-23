@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoDrive Pro — Избранное</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">AutoDrive <span>Pro</span></a>
+
+      <nav class="nav" id="mainNav">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="catalog.html" class="nav-link">Каталог</a>
+        <a href="services.html" class="nav-link">Услуги</a>
+        <a href="favorites.html" class="nav-link">Избранное <span class="fav-badge" id="favBadge">0</span></a>
+        <a href="contacts.html" class="nav-link">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-btn" id="themeBtn" aria-label="Сменить тему">🌙</button>
+        <button class="burger" id="burgerBtn" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <h1>Избранные автомобили</h1>
+        <p>Сохраняются в браузере через localStorage.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="favorites-toolbar">
+          <span>Всего в избранном: <b id="favoritesCountPage">0</b></span>
+          <button id="clearFavorites" class="btn btn-outline" type="button">Очистить избранное</button>
+        </div>
+
+        <div id="favoritesGrid" class="catalog-grid"></div>
+
+        <div id="favoritesEmpty" class="empty-state hidden">
+          <p>Пока пусто. Добавь авто из каталога ❤️</p>
+          <a href="catalog.html" class="btn btn-primary">Перейти в каталог</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> AutoDrive Pro</p>
+      <p>Учебный проект • HTML/CSS/JS</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="carModal" aria-hidden="true">
+    <div class="modal-overlay" data-close-modal></div>
+    <div class="modal-content">
+      <button class="modal-close" type="button" data-close-modal>✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <button class="back-top" id="backTop" aria-label="Наверх">↑</button>
+  <div class="toast" id="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

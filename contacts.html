@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoDrive Pro — Контакты</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">AutoDrive <span>Pro</span></a>
+
+      <nav class="nav" id="mainNav">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="catalog.html" class="nav-link">Каталог</a>
+        <a href="services.html" class="nav-link">Услуги</a>
+        <a href="favorites.html" class="nav-link">Избранное <span class="fav-badge" id="favBadge">0</span></a>
+        <a href="contacts.html" class="nav-link">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-btn" id="themeBtn" aria-label="Сменить тему">🌙</button>
+        <button class="burger" id="burgerBtn" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <h1>Контакты</h1>
+        <p>Оставь заявку, и сайт покажет валидацию + демо-отправку.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <h2>AutoDrive Pro</h2>
+          <p><strong>Телефон:</strong> +7 (900) 123-45-67</p>
+          <p><strong>Email:</strong> info@autodrive-demo.ru</p>
+          <p><strong>Адрес:</strong> г. Москва, ул. Примерная, 10</p>
+          <p><strong>Режим работы:</strong> Пн–Сб, 10:00–20:00</p>
+
+          <div class="map-placeholder">
+            <span>📍</span>
+            <p>Здесь потом можно вставить iframe-карту</p>
+          </div>
+
+          <div class="mini-note" id="lastRequestNote"></div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <h2>Оставить заявку</h2>
+          <form id="contactForm" class="contact-form" novalidate>
+            <label>
+              Имя
+              <input type="text" id="name" placeholder="Введите имя" />
+              <small class="error" id="nameError"></small>
+            </label>
+
+            <label>
+              Телефон
+              <input type="tel" id="phone" class="js-phone-mask" placeholder="+7 (___) ___-__-__" />
+              <small class="error" id="phoneError"></small>
+            </label>
+
+            <label>
+              Email
+              <input type="email" id="email" placeholder="example@mail.ru" />
+              <small class="error" id="emailError"></small>
+            </label>
+
+            <label>
+              Сообщение
+              <textarea id="message" rows="4" placeholder="Что вас интересует?"></textarea>
+              <small class="error" id="messageError"></small>
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" id="agree" />
+              <span>Согласен на обработку данных (демо)</span>
+            </label>
+            <small class="error" id="agreeError"></small>
+
+            <button type="submit" class="btn btn-primary full-width">Отправить</button>
+            <p id="formSuccess" class="success-message"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> AutoDrive Pro</p>
+      <p>Учебный проект • HTML/CSS/JS</p>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Наверх">↑</button>
+  <div class="toast" id="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

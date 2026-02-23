@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoDrive Pro — Услуги</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">AutoDrive <span>Pro</span></a>
+
+      <nav class="nav" id="mainNav">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="catalog.html" class="nav-link">Каталог</a>
+        <a href="services.html" class="nav-link">Услуги</a>
+        <a href="favorites.html" class="nav-link">Избранное <span class="fav-badge" id="favBadge">0</span></a>
+        <a href="contacts.html" class="nav-link">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-btn" id="themeBtn" aria-label="Сменить тему">🌙</button>
+        <button class="burger" id="burgerBtn" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <h1>Услуги</h1>
+        <p>Подбор, диагностика, ТО и быстрый калькулятор стоимости.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Подбор автомобиля</h3>
+            <p>Подберём машину под бюджет и задачи.</p>
+            <ul>
+              <li>Список вариантов</li>
+              <li>Сравнение комплектаций</li>
+              <li>Рекомендации</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Компьютерная диагностика</h3>
+            <p>Проверка электронных систем и ошибок.</p>
+            <ul>
+              <li>Сканер ошибок</li>
+              <li>Проверка двигателя</li>
+              <li>Отчёт по состоянию</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Плановое ТО</h3>
+            <p>Регламентное обслуживание под ключ.</p>
+            <ul>
+              <li>Масла и фильтры</li>
+              <li>Подвеска</li>
+              <li>Тормозная система</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Предпродажная подготовка</h3>
+            <p>Подготовим авто к продаже или передаче.</p>
+            <ul>
+              <li>Химчистка</li>
+              <li>Полировка</li>
+              <li>Проверка документов</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container service-tools-grid">
+        <div class="calc-card">
+          <h2>Калькулятор услуг</h2>
+          <p class="muted">Примерная стоимость (демо).</p>
+
+          <form id="serviceCalcForm" class="calc-form">
+            <label>
+              Услуга
+              <select id="calcService">
+                <option value="diagnostic">Диагностика</option>
+                <option value="maintenance">Плановое ТО</option>
+                <option value="selection">Подбор авто</option>
+                <option value="prep">Предпродажная подготовка</option>
+              </select>
+            </label>
+
+            <label>
+              Срочность
+              <select id="calcUrgency">
+                <option value="normal">Обычная</option>
+                <option value="urgent">Срочно (+20%)</option>
+              </select>
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" id="calcWash" />
+              <span>Добавить мойку (+1500 ₽)</span>
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" id="calcReport" />
+              <span>Подробный отчёт (+2500 ₽)</span>
+            </label>
+
+            <button class="btn btn-primary" type="submit">Рассчитать</button>
+          </form>
+
+          <div class="calc-result" id="calcResult">Стоимость: —</div>
+        </div>
+
+        <div class="faq-card">
+          <h2>FAQ</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button type="button" class="faq-btn">Сколько занимает диагностика?</button>
+              <div class="faq-content"><p>Обычно 30–60 минут, в зависимости от модели и списка проверок.</p></div>
+            </div>
+            <div class="faq-item">
+              <button type="button" class="faq-btn">Можно ли записаться онлайн?</button>
+              <div class="faq-content"><p>Да, оставь заявку на странице контактов — свяжемся с тобой.</p></div>
+            </div>
+            <div class="faq-item">
+              <button type="button" class="faq-btn">Вы помогаете с выбором первой машины?</button>
+              <div class="faq-content"><p>Да, это частый кейс. Подберём варианты под бюджет и задачи.</p></div>
+            </div>
+            <div class="faq-item">
+              <button type="button" class="faq-btn">Есть ли гарантия на работы?</button>
+              <div class="faq-content"><p>Да, на большинство работ и расходников даётся гарантия.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> AutoDrive Pro</p>
+      <p>Учебный проект • HTML/CSS/JS</p>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Наверх">↑</button>
+  <div class="toast" id="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

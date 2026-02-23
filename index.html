@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoDrive Pro — Главная</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">AutoDrive <span>Pro</span></a>
+
+      <nav class="nav" id="mainNav">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="catalog.html" class="nav-link">Каталог</a>
+        <a href="services.html" class="nav-link">Услуги</a>
+        <a href="favorites.html" class="nav-link">Избранное <span class="fav-badge" id="favBadge">0</span></a>
+        <a href="contacts.html" class="nav-link">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-btn" id="themeBtn" aria-label="Сменить тему">🌙</button>
+        <button class="burger" id="burgerBtn" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="badge">Учебный проект • HTML / CSS / JS</p>
+          <h1>Автомобили, сервис и подбор — в одном сайте</h1>
+          <p class="hero-text">
+            Прокачанная версия учебного сайта: каталог с фильтрами, избранное, модальные окна,
+            страница автомобиля и формы с валидацией.
+          </p>
+
+          <form id="heroSearchForm" class="hero-search">
+            <input type="text" id="heroSearchText" placeholder="Например: Camry, BMW, кроссовер..." />
+            <select id="heroSearchType">
+              <option value="all">Любой тип</option>
+              <option value="sedan">Седан</option>
+              <option value="crossover">Кроссовер</option>
+              <option value="hatchback">Хэтчбек</option>
+            </select>
+            <button class="btn btn-primary" type="submit">Найти</button>
+          </form>
+
+          <div class="hero-actions">
+            <a href="catalog.html" class="btn btn-outline">Открыть каталог</a>
+            <a href="contacts.html" class="btn btn-outline">Оставить заявку</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>12</strong>
+              <span>авто в каталоге</span>
+            </div>
+            <div class="stat">
+              <strong>24/7</strong>
+              <span>онлайн заявки</span>
+            </div>
+            <div class="stat">
+              <strong>4.9</strong>
+              <span>рейтинг сервиса</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-card">
+          <div class="slider-top">
+            <h3>Рекомендуемые авто</h3>
+            <div class="slider-controls">
+              <button id="heroPrev" class="icon-btn" type="button">←</button>
+              <button id="heroNext" class="icon-btn" type="button">→</button>
+            </div>
+          </div>
+          <div id="heroSlider" class="hero-slider"></div>
+          <div id="heroDots" class="dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Популярные модели</h2>
+          <a href="catalog.html" class="link-more">В каталог →</a>
+        </div>
+        <div id="featuredGrid" class="cards-grid"></div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container">
+        <div class="section-head">
+          <h2>Почему этот сайт уже “норм” для учёбы</h2>
+        </div>
+        <div class="features-grid">
+          <article class="feature">
+            <div class="feature-icon">⚙️</div>
+            <h3>JS-логика</h3>
+            <p>Фильтры, сортировка, избранное, модалки и обработка форм.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">📱</div>
+            <h3>Адаптив</h3>
+            <p>Сайт нормально открывается на телефоне и планшете.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">🌙</div>
+            <h3>Тема</h3>
+            <p>Переключение светлой/тёмной темы с сохранением состояния.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">💾</div>
+            <h3>LocalStorage</h3>
+            <p>Избранные авто и тема сохраняются между перезагрузками.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container cta">
+        <div>
+          <h2>Дальше можно ещё круче</h2>
+          <p>Легко добавить авторизацию, API, реальные фото, корзину, админку.</p>
+        </div>
+        <a href="services.html" class="btn btn-primary">Смотреть услуги</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> AutoDrive Pro</p>
+      <p>Учебный проект • HTML/CSS/JS</p>
+    </div>
+  </footer>
+
+  <!-- Модалка -->
+  <div class="modal" id="carModal" aria-hidden="true">
+    <div class="modal-overlay" data-close-modal></div>
+    <div class="modal-content">
+      <button class="modal-close" type="button" data-close-modal>✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <button class="back-top" id="backTop" aria-label="Наверх">↑</button>
+  <div class="toast" id="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

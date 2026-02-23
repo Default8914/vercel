@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoDrive Pro — Каталог</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">AutoDrive <span>Pro</span></a>
+
+      <nav class="nav" id="mainNav">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="catalog.html" class="nav-link">Каталог</a>
+        <a href="services.html" class="nav-link">Услуги</a>
+        <a href="favorites.html" class="nav-link">Избранное <span class="fav-badge" id="favBadge">0</span></a>
+        <a href="contacts.html" class="nav-link">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-btn" id="themeBtn" aria-label="Сменить тему">🌙</button>
+        <button class="burger" id="burgerBtn" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <h1>Каталог автомобилей</h1>
+        <p>Поиск, фильтры, сортировка, избранное и модальные окна.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="filters-panel">
+          <div class="filters-grid">
+            <input id="filterSearch" type="text" placeholder="Поиск по названию..." />
+            <select id="filterBrand"></select>
+            <select id="filterType">
+              <option value="all">Все типы</option>
+              <option value="sedan">Седан</option>
+              <option value="crossover">Кроссовер</option>
+              <option value="hatchback">Хэтчбек</option>
+            </select>
+            <select id="filterDrive">
+              <option value="all">Любой привод</option>
+              <option value="FWD">Передний</option>
+              <option value="RWD">Задний</option>
+              <option value="AWD">Полный</option>
+            </select>
+            <select id="filterSort">
+              <option value="popular">Сначала популярные</option>
+              <option value="price-asc">Цена ↑</option>
+              <option value="price-desc">Цена ↓</option>
+              <option value="year-desc">Год (новые)</option>
+              <option value="year-asc">Год (старые)</option>
+            </select>
+            <div class="price-range">
+              <input id="minPrice" type="number" placeholder="Цена от" />
+              <input id="maxPrice" type="number" placeholder="Цена до" />
+            </div>
+          </div>
+
+          <div class="filters-bottom">
+            <label class="checkbox">
+              <input id="filterFavOnly" type="checkbox" />
+              <span>Только избранное</span>
+            </label>
+            <div class="filters-actions">
+              <button id="resetFilters" class="btn btn-outline" type="button">Сбросить</button>
+              <span class="catalog-count">Найдено: <b id="catalogCount">0</b></span>
+            </div>
+          </div>
+        </div>
+
+        <div id="catalogGrid" class="catalog-grid"></div>
+        <div id="catalogEmpty" class="empty-state hidden">
+          <p>Ничего не найдено. Попробуй изменить фильтры.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> AutoDrive Pro</p>
+      <p>Учебный проект • HTML/CSS/JS</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="carModal" aria-hidden="true">
+    <div class="modal-overlay" data-close-modal></div>
+    <div class="modal-content">
+      <button class="modal-close" type="button" data-close-modal>✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <button class="back-top" id="backTop" aria-label="Наверх">↑</button>
+  <div class="toast" id="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
